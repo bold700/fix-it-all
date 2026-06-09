@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fix-It All | Autoservice Utrecht, onderhoud, APK, reparatie &amp; diagnose</title>
-  <meta name="description" content="Fix-It All: gespecialiseerd in onderhoud, APK, reparatie en diagnose van alle merken. Snel, eerlijk en vakkundig. BOVAG gecertificeerd, sinds 2000." />
+  <title>Fix-It All | Service en kwaliteit voor een betaalbare prijs, autogarage Utrecht</title>
+  <meta name="description" content="Fix-It All Utrecht: onderhoud, APK, reparatie en diagnose van alle merken. Eerlijk advies, persoonlijke aandacht en een sterke prijs-kwaliteitverhouding. Sinds 2000." />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,21 +16,10 @@
       theme: {
         extend: {
           colors: {
-            brand: {
-              orange: '#F26C1A',
-              orangeDark: '#D85C10',
-            },
-            ink: {
-              900: '#0B1118',
-              800: '#0E1620',
-              700: '#131E29',
-              card: '#16212D',
-              border: '#26333F',
-            },
+            brand: { orange: '#F47A20', orangeDark: '#DC6810', orangeSoft: '#FFF3E9' },
+            ink: { 950: '#070B11', 900: '#0B1118', 800: '#0E1620', 700: '#13202C', card: '#16222F', border: '#26333F' },
           },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
         },
       },
     };
@@ -39,253 +28,391 @@
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', system-ui, sans-serif; }
-    .tracking-tightest { letter-spacing: -0.03em; }
-    /* Hero achtergrond: foto met donkere overlay, gradient als fallback */
+    .tightest { letter-spacing: -0.03em; }
     .hero-bg {
       background-image:
-        linear-gradient(90deg, rgba(11,17,24,0.97) 0%, rgba(11,17,24,0.85) 38%, rgba(11,17,24,0.55) 70%, rgba(11,17,24,0.35) 100%),
-        url('https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=2000&q=80');
-      background-size: cover;
-      background-position: center right;
+        linear-gradient(90deg, rgba(7,11,17,0.94) 0%, rgba(7,11,17,0.80) 42%, rgba(7,11,17,0.45) 72%, rgba(7,11,17,0.25) 100%),
+        url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2000&q=80');
+      background-size: cover; background-position: center;
     }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    .vac-bg {
+      background-image:
+        linear-gradient(90deg, rgba(11,17,24,0.96) 0%, rgba(11,17,24,0.88) 45%, rgba(11,17,24,0.65) 100%),
+        url('https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover; background-position: center;
     }
+    /* outlined floating label */
+    .field { position: relative; }
+    .field > label { position: absolute; top: -0.55rem; left: 0.7rem; padding: 0 0.35rem; background: #fff; font-size: 0.72rem; font-weight: 600; color: #475569; }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
   </style>
 </head>
 
 <body class="bg-ink-900 text-white antialiased selection:bg-brand-orange/30">
-
-  <!-- Skip link voor toegankelijkheid -->
   <a href="#hero" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-md focus:bg-brand-orange focus:px-4 focus:py-2 focus:font-semibold">Direct naar inhoud</a>
 
-  <!-- ======================= HEADER ======================= -->
-  <header class="sticky top-0 z-40 bg-ink-900/90 backdrop-blur border-b border-white/5">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3.5 lg:px-8" aria-label="Hoofdnavigatie">
-      <!-- Logo -->
-      <a href="#hero" class="flex items-baseline gap-0.5 text-2xl font-extrabold tracking-tightest focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded">
-        <span>Fix-It</span><span class="text-brand-orange">All</span><span class="text-brand-orange text-xs align-super">&reg;</span>
+  <!-- ===== HEADER (transparant over hero, krijgt achtergrond bij scrollen) ===== -->
+  <header id="header" class="fixed inset-x-0 top-0 z-40 transition-all duration-300">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Hoofdnavigatie">
+      <a href="#hero" class="text-2xl font-extrabold italic tightest focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded">
+        Fix-It <span class="text-brand-orange not-italic">All</span>
       </a>
 
-      <!-- Desktop nav -->
-      <ul class="hidden lg:flex items-center gap-7 text-sm font-medium text-white/80">
-        <li><a class="transition-colors duration-150 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded px-1 py-1" href="#diensten">Diensten</a></li>
-        <li><a class="transition-colors duration-150 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded px-1 py-1" href="#waarom">Waarom Fix-It All</a></li>
-        <li><a class="transition-colors duration-150 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded px-1 py-1" href="#reviews">Reviews</a></li>
-        <li><a class="transition-colors duration-150 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded px-1 py-1" href="#vacature">Vacature</a></li>
-        <li><a class="transition-colors duration-150 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded px-1 py-1" href="#over">Over ons</a></li>
-        <li><a class="transition-colors duration-150 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded px-1 py-1" href="#contact">Contact</a></li>
+      <ul class="hidden lg:flex items-center gap-8 text-sm font-medium text-white/85">
+        <li><a class="transition-colors duration-150 hover:text-brand-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded px-1 py-1" href="#diensten">Diensten</a></li>
+        <li><a class="transition-colors duration-150 hover:text-brand-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded px-1 py-1" href="#waarom">Waarom</a></li>
+        <li><a class="transition-colors duration-150 hover:text-brand-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded px-1 py-1" href="#reviews">Reviews</a></li>
+        <li><a class="transition-colors duration-150 hover:text-brand-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded px-1 py-1" href="occasions.html">Auto's te koop</a></li>
+        <li><a class="transition-colors duration-150 hover:text-brand-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded px-1 py-1" href="#vacature">Vacature</a></li>
+        <li><a class="transition-colors duration-150 hover:text-brand-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded px-1 py-1" href="#contact">Contact</a></li>
       </ul>
 
-      <!-- CTA's rechts -->
       <div class="flex items-center gap-3">
-        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 rounded-md bg-brand-orange px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-brand-orangeDark active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ink-900">
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-          Afspraak maken
+        <a href="tel:0302148488" class="hidden sm:inline-flex items-center gap-2 rounded-md bg-brand-orange px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-brand-orangeDark active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ink-900">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Bel direct 030 214 8488
         </a>
-        <a href="tel:0302148488" class="hidden md:flex flex-col leading-tight text-right focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded px-1">
-          <span class="text-[11px] uppercase tracking-wide text-white/55">Bel direct</span>
-          <span class="text-sm font-bold text-brand-orange">030 214 84 88</span>
-        </a>
-
-        <!-- Mobiel: hamburger -->
-        <button id="menuBtn" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/10 text-white transition-colors duration-150 hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">
+        <button id="menuBtn" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/15 text-white transition-colors duration-150 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">
           <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </nav>
 
-    <!-- Mobiel menu -->
-    <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10 bg-ink-800 px-5 pb-5 pt-2">
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10 bg-ink-900/98 backdrop-blur px-5 pb-5 pt-2">
       <ul class="flex flex-col text-base font-medium">
-        <li><a class="block rounded px-2 py-3 text-white/85 transition-colors hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange" href="#diensten">Diensten</a></li>
-        <li><a class="block rounded px-2 py-3 text-white/85 transition-colors hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange" href="#waarom">Waarom Fix-It All</a></li>
-        <li><a class="block rounded px-2 py-3 text-white/85 transition-colors hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange" href="#reviews">Reviews</a></li>
-        <li><a class="block rounded px-2 py-3 text-white/85 transition-colors hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange" href="#vacature">Vacature</a></li>
-        <li><a class="block rounded px-2 py-3 text-white/85 transition-colors hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange" href="#over">Over ons</a></li>
-        <li><a class="block rounded px-2 py-3 text-white/85 transition-colors hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange" href="#contact">Contact</a></li>
+        <li><a class="block rounded px-2 py-3 text-white/90 hover:bg-white/5" href="#diensten">Diensten</a></li>
+        <li><a class="block rounded px-2 py-3 text-white/90 hover:bg-white/5" href="#waarom">Waarom</a></li>
+        <li><a class="block rounded px-2 py-3 text-white/90 hover:bg-white/5" href="#reviews">Reviews</a></li>
+        <li><a class="block rounded px-2 py-3 text-white/90 hover:bg-white/5" href="occasions.html">Auto's te koop</a></li>
+        <li><a class="block rounded px-2 py-3 text-white/90 hover:bg-white/5" href="#vacature">Vacature</a></li>
+        <li><a class="block rounded px-2 py-3 text-white/90 hover:bg-white/5" href="#contact">Contact</a></li>
       </ul>
-      <div class="mt-3 flex flex-col gap-2.5">
-        <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-md bg-brand-orange px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-orangeDark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">Afspraak maken</a>
-        <a href="tel:0302148488" class="inline-flex items-center justify-center gap-2 rounded-md border border-white/15 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">Bel direct 030 214 84 88</a>
-      </div>
+      <a href="tel:0302148488" class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand-orange px-4 py-3 text-sm font-semibold text-white hover:bg-brand-orangeDark">Bel direct 030 214 8488</a>
     </div>
   </header>
 
   <main>
-    <!-- ======================= HERO + DIENSTEN ======================= -->
-    <section id="hero" class="hero-bg relative">
-      <div class="mx-auto max-w-7xl px-5 pt-16 sm:pt-20 lg:px-8 lg:pt-24">
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="hero-bg relative flex min-h-[88vh] items-center">
+      <div class="mx-auto w-full max-w-7xl px-5 pt-28 pb-16 lg:px-8">
         <div class="max-w-2xl">
-          <h1 class="text-4xl font-extrabold leading-[1.05] tracking-tightest sm:text-5xl lg:text-6xl">
-            Uw auto. Onze zorg.<br />Snel, eerlijk en vakkundig.
+          <h1 class="text-4xl font-extrabold leading-[1.04] tightest sm:text-5xl lg:text-6xl">
+            Service en kwaliteit<br />voor een betaalbare prijs
           </h1>
           <p class="mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
-            Gespecialiseerd in onderhoud, APK, reparatie en diagnose van alle merken. Persoonlijke service en kwaliteit waarop u kunt vertrouwen.
+            Gepassioneerd door techniek. Gespecialiseerd in onderhoud en reparatie voor alle merken. Eerlijk advies, persoonlijke aandacht en een sterke prijs-kwaliteitverhouding.
           </p>
-
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-md bg-brand-orange px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/30 transition-all duration-150 hover:bg-brand-orangeDark active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ink-900">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-              Maak direct een afspraak
-            </a>
-            <a href="tel:0302148488" class="inline-flex items-center justify-center gap-2 rounded-md border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur transition-all duration-150 hover:bg-white/10 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">
+            <a href="tel:0302148488" class="inline-flex items-center justify-center gap-2 rounded-md bg-brand-orange px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/30 transition-all duration-150 hover:bg-brand-orangeDark active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ink-900">
               <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              Bel direct 030 214 84 88
+              Bel ons
+            </a>
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-md border border-white/25 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur transition-all duration-150 hover:bg-white/10 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              Plan afspraak
             </a>
           </div>
-
-          <!-- Trust badges -->
-          <dl class="mt-9 flex flex-wrap gap-x-8 gap-y-4 text-sm">
-            <div class="flex items-center gap-2.5">
-              <svg class="h-5 w-5 text-brand-orange" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <div><dt class="font-bold">4.6 <span class="font-normal text-white/65">uit 216 reviews</span></dt></div>
-            </div>
-            <div class="flex items-center gap-2.5">
-              <svg class="h-5 w-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-              <div><dt class="font-semibold">Sinds 2000</dt><dd class="text-white/60">Ruim 20 jaar ervaring</dd></div>
-            </div>
-            <div class="flex items-center gap-2.5">
-              <svg class="h-5 w-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-              <div><dt class="font-semibold">BOVAG gecertificeerd</dt><dd class="text-white/60">Kwaliteit &amp; betrouwbaarheid</dd></div>
-            </div>
-          </dl>
+          <div class="mt-9 flex items-center gap-2 text-sm text-white/80">
+            <svg class="h-5 w-5 text-brand-orange" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span class="font-bold text-white">4.6</span>
+            <span class="text-white/65">uit 216 reviews &middot; sinds 2000</span>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Diensten kaarten (straddelen de sectiegrens) -->
-        <div id="diensten" class="mt-12 grid grid-cols-1 gap-4 pb-px sm:grid-cols-2 lg:grid-cols-4 lg:-mb-20 lg:mt-16 scroll-mt-24">
-          <!-- kaart -->
-          <article class="group rounded-xl border border-ink-border bg-ink-card p-6 transition-all duration-150 hover:border-brand-orange/50 hover:-translate-y-0.5">
-            <span class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-white/5 text-white ring-1 ring-white/10">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            </span>
-            <h3 class="mt-4 text-lg font-bold tracking-tight">Onderhoud &amp; APK</h3>
-            <p class="mt-2 text-sm leading-relaxed text-white/60">Complete onderhoudsbeurt, APK-keuring en preventief onderhoud.</p>
-          </article>
-
-          <article class="group rounded-xl border border-ink-border bg-ink-card p-6 transition-all duration-150 hover:border-brand-orange/50 hover:-translate-y-0.5">
-            <span class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-white/5 text-white ring-1 ring-white/10">
+    <!-- ===== ONZE DIENSTEN ===== -->
+    <section id="diensten" class="bg-slate-50 text-ink-900 scroll-mt-20">
+      <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
+        <h2 class="text-2xl font-extrabold tightest sm:text-3xl">Onze diensten</h2>
+        <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-ink-900 text-white">
               <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.1 2.1-2.3-.6-.6-2.3 2.1-2.1z"/></svg>
             </span>
             <h3 class="mt-4 text-lg font-bold tracking-tight">Reparatie</h3>
-            <p class="mt-2 text-sm leading-relaxed text-white/60">Vakkundige reparaties aan motor, remmen, koppeling, uitlaat en meer.</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Vakkundige reparaties aan motor, remmen, koppeling, uitlaat en meer. Altijd met kwaliteit en garantie.</p>
           </article>
-
-          <article class="group rounded-xl border border-ink-border bg-ink-card p-6 transition-all duration-150 hover:border-brand-orange/50 hover:-translate-y-0.5">
-            <span class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-white/5 text-white ring-1 ring-white/10">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-6"/></svg>
+          <article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-ink-900 text-white">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             </span>
-            <h3 class="mt-4 text-lg font-bold tracking-tight">Diagnose</h3>
-            <p class="mt-2 text-sm leading-relaxed text-white/60">Moderne diagnose-apparatuur voor een snelle en nauwkeurige analyse.</p>
+            <h3 class="mt-4 text-lg font-bold tracking-tight">Onderhoud &amp; APK</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Compleet onderhoud en APK-keuringen volgens fabrieksvoorschriften. Zorgeloos de weg op.</p>
           </article>
-
-          <article class="group rounded-xl border border-ink-border bg-ink-card p-6 transition-all duration-150 hover:border-brand-orange/50 hover:-translate-y-0.5">
-            <span class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-white/5 text-white ring-1 ring-white/10">
+          <article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-ink-900 text-white">
               <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0zM15 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/><path d="M5 17H3v-5l2-4h11l3 4v5h-2M7 13h9"/></svg>
             </span>
             <h3 class="mt-4 text-lg font-bold tracking-tight">Alle merken</h3>
-            <p class="mt-2 text-sm leading-relaxed text-white/60">Wij werken aan alle merken en modellen, van compact tot bedrijfswagen.</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Wij werken aan alle merken en modellen. Van compacte auto tot bedrijfswagen of hybride.</p>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-ink-900 text-white">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </span>
+            <h3 class="mt-4 text-lg font-bold tracking-tight">Diagnose met de laatste techniek</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Snel en nauwkeurig de juiste oorzaak vinden met moderne diagnose-apparatuur.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ======================= LICHTE SECTIE: 3 KAARTEN ======================= -->
-    <section id="waarom" class="bg-slate-50 text-ink-900 scroll-mt-24">
-      <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:pt-36 lg:pb-20">
-        <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
-
-          <!-- Particulier & Zakelijk -->
-          <article id="over" class="rounded-xl border border-slate-200 bg-white p-7 shadow-sm scroll-mt-24">
-            <span class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-slate-100 text-slate-700">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </span>
-            <h3 class="mt-4 text-lg font-bold tracking-tight">Particulier &amp; Zakelijk</h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Of het nu om uw persoonlijke auto of een zakelijk wagenpark gaat: wij staan voor u klaar.</p>
-            <a href="#contact" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-orange transition-colors duration-150 hover:text-brand-orangeDark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded">
-              Meer informatie
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-            </a>
-          </article>
-
-          <!-- Vacature (oranje) -->
-          <article id="vacature" class="rounded-xl bg-brand-orange p-7 text-white shadow-sm shadow-orange-900/10 scroll-mt-24">
-            <span class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-white/15 text-white">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-            </span>
-            <h3 class="mt-4 text-lg font-bold tracking-tight">Vacature: Automonteur</h3>
-            <p class="mt-2 text-sm leading-relaxed text-white/90">Wij zoeken een ervaren monteur met passie voor auto's.</p>
-            <a href="#contact" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-white underline-offset-4 transition-colors duration-150 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded">
-              Bekijk vacature
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-            </a>
-          </article>
-
-          <!-- Reviews -->
-          <article id="reviews" class="rounded-xl border border-slate-200 bg-white p-7 shadow-sm scroll-mt-24">
-            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Wat klanten over ons zeggen</p>
-            <div class="mt-3 flex items-center gap-3">
-              <span class="text-4xl font-extrabold tracking-tight text-ink-900">4.6</span>
-              <span class="flex" aria-label="4,6 van de 5 sterren" role="img">
-                <svg class="h-5 w-5 text-brand-orange" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg class="h-5 w-5 text-brand-orange" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg class="h-5 w-5 text-brand-orange" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg class="h-5 w-5 text-brand-orange" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg class="h-5 w-5 text-slate-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              </span>
-            </div>
-            <p class="mt-1 text-sm text-slate-500">Gebaseerd op 216 reviews</p>
-            <a href="#reviews" class="mt-4 inline-flex items-center justify-center rounded-md border border-slate-300 px-4 py-2.5 text-sm font-semibold text-ink-900 transition-colors duration-150 hover:bg-slate-50 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">Alle reviews bekijken</a>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================= CONTACT CTA ======================= -->
-    <section id="contact" class="bg-ink-800 scroll-mt-24">
-      <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
-        <div class="rounded-2xl border border-ink-border bg-gradient-to-br from-ink-700 to-ink-900 p-8 text-center sm:p-12">
-          <h2 class="text-2xl font-extrabold tracking-tightest sm:text-3xl">Klaar om een afspraak te maken?</h2>
-          <p class="mx-auto mt-3 max-w-xl text-white/65">Bel ons of plan online. Wij zorgen dat uw auto snel, eerlijk en vakkundig weer de weg op kan.</p>
-          <div class="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href="tel:0302148488" class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand-orange px-6 py-3.5 text-sm font-semibold text-white transition-all duration-150 hover:bg-brand-orangeDark active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ink-900 sm:w-auto">Bel direct 030 214 84 88</a>
-            <a href="mailto:info@fixitall.nl" class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/20 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-150 hover:bg-white/5 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange sm:w-auto">Mail ons</a>
+    <!-- ===== WAAROM FIX-IT ALL ===== -->
+    <section id="waarom" class="bg-slate-50 text-ink-900 scroll-mt-20">
+      <div class="mx-auto max-w-7xl px-5 pb-16 lg:px-8 lg:pb-24">
+        <h2 class="text-2xl font-extrabold tightest sm:text-3xl">Waarom Fix-It All</h2>
+        <div class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="lg:border-l lg:border-slate-200 lg:pl-6 first:lg:border-l-0 first:lg:pl-0">
+            <svg class="h-7 w-7 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <h3 class="mt-3 text-base font-bold tracking-tight">Eerlijk advies</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Duidelijk, transparant en zonder verrassingen. We adviseren alleen wat nodig is.</p>
           </div>
+          <div class="lg:border-l lg:border-slate-200 lg:pl-6">
+            <svg class="h-7 w-7 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <h3 class="mt-3 text-base font-bold tracking-tight">Persoonlijke aandacht</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">We nemen de tijd voor u en uw auto. Korte lijnen, heldere communicatie en betrokken.</p>
+          </div>
+          <div class="lg:border-l lg:border-slate-200 lg:pl-6">
+            <svg class="h-7 w-7 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89L7 22l5-3 5 3-1.21-8.11"/></svg>
+            <h3 class="mt-3 text-base font-bold tracking-tight">Vakmanschap sinds 2000</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Meer dan 24 jaar ervaring en continu bijgeschoold. Kwaliteit waar u op kunt vertrouwen.</p>
+          </div>
+          <div class="lg:border-l lg:border-slate-200 lg:pl-6">
+            <svg class="h-7 w-7 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4M9 9v.01M9 12v.01M9 15v.01"/></svg>
+            <h3 class="mt-3 text-base font-bold tracking-tight">Voor particulier en zakelijk</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Van particuliere auto tot zakelijk wagenpark. Flexibel, meedenkend en betrouwbaar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== REVIEWS ===== -->
+    <section id="reviews" class="bg-ink-900 scroll-mt-20">
+      <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
+        <h2 class="text-2xl font-extrabold tightest sm:text-3xl">Wat onze klanten zeggen</h2>
+        <div class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-4">
+          <!-- score blok -->
+          <div class="lg:col-span-1">
+            <div class="flex items-end gap-3">
+              <span class="text-5xl font-extrabold tightest">4.6</span>
+              <svg class="mb-2 h-7 w-7 text-brand-orange" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="mt-1 text-sm text-white/60">uit 216 reviews</p>
+            <div class="mt-5 inline-flex items-center gap-3 rounded-lg border border-ink-border bg-ink-card px-4 py-3">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/></svg>
+              <div class="text-sm leading-tight">
+                <p class="font-semibold">Google Reviews</p>
+                <span class="text-brand-orange" aria-hidden="true">★★★★★</span>
+              </div>
+            </div>
+            <p class="mt-4"><a href="#reviews" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-orange hover:text-white transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded">Bekijk alle reviews <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></p>
+          </div>
+          <!-- reviews -->
+          <article class="rounded-xl border border-ink-border bg-ink-card p-6">
+            <div class="text-brand-orange" aria-label="5 sterren" role="img">★★★★★</div>
+            <p class="mt-3 text-sm leading-relaxed text-white/80">"Topgarage! Eerlijk, snel en denken altijd mee. Mijn auto rijdt weer als nieuw en de prijs is altijd zoals afgesproken."</p>
+            <p class="mt-4 text-sm font-semibold">Mark</p>
+          </article>
+          <article class="rounded-xl border border-ink-border bg-ink-card p-6">
+            <div class="text-brand-orange" aria-label="5 sterren" role="img">★★★★★</div>
+            <p class="mt-3 text-sm leading-relaxed text-white/80">"Fijne, persoonlijke service en duidelijke uitleg. Hier komen ze afspraken na en betaal je niet te veel. Aanrader!"</p>
+            <p class="mt-4 text-sm font-semibold">Sanne</p>
+          </article>
+          <article class="rounded-xl border border-ink-border bg-ink-card p-6">
+            <div class="text-brand-orange" aria-label="5 sterren" role="img">★★★★★</div>
+            <p class="mt-3 text-sm leading-relaxed text-white/80">"Al jaren klant bij Fix-It All. Vakmensen die weten wat ze doen. Betrouwbaar en altijd vriendelijk."</p>
+            <p class="mt-4 text-sm font-semibold">Jeroen</p>
+          </article>
+        </div>
+
+        <!-- ===== VACATURE BANNER ===== -->
+        <div id="vacature" class="mt-14 scroll-mt-20 overflow-hidden rounded-2xl border border-brand-orange/60 vac-bg">
+          <div class="grid items-center gap-6 p-8 sm:p-10 lg:grid-cols-3">
+            <div class="lg:col-span-2">
+              <h3 class="text-2xl font-extrabold tightest sm:text-3xl">Wij zoeken een monteur</h3>
+              <p class="mt-3 max-w-2xl text-sm leading-relaxed text-white/75">Heb jij passie voor techniek en auto's? Werk je graag aan diverse merken en wil je blijven groeien in je vak? Bij Fix-It All krijg je ruimte, goede arbeidsvoorwaarden en een hecht team dat voor elkaar klaarstaat.</p>
+              <ul class="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/85">
+                <li class="flex items-center gap-2"><svg class="h-4 w-4 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Afwisselend werk</li>
+                <li class="flex items-center gap-2"><svg class="h-4 w-4 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 6l-9.5 9.5-5-5L1 18M17 6h6v6"/></svg>Ruimte om te groeien</li>
+                <li class="flex items-center gap-2"><svg class="h-4 w-4 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Moderne werkplaats</li>
+                <li class="flex items-center gap-2"><svg class="h-4 w-4 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Hecht team</li>
+              </ul>
+            </div>
+            <div class="lg:justify-self-end">
+              <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-md bg-brand-orange px-6 py-3.5 text-sm font-semibold text-white transition-all duration-150 hover:bg-brand-orangeDark active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ink-900">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+                Solliciteer nu
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="bg-slate-50 text-ink-900 scroll-mt-20">
+      <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
+        <h2 class="text-2xl font-extrabold tightest sm:text-3xl">Contact</h2>
+        <div class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <!-- gegevens -->
+          <div class="space-y-5">
+            <div class="flex items-start gap-3">
+              <svg class="mt-0.5 h-5 w-5 shrink-0 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <p class="text-sm leading-relaxed text-slate-700"><span class="font-semibold text-ink-900">Industrieweg 12</span><br />3542 AD Utrecht</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="h-5 w-5 shrink-0 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:0302148488" class="text-sm font-medium text-slate-700 hover:text-brand-orange transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded">030 214 8488</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="h-5 w-5 shrink-0 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              <a href="mailto:info@fix-it-all.nl" class="text-sm font-medium text-slate-700 hover:text-brand-orange transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded">info@fix-it-all.nl</a>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="mt-0.5 h-5 w-5 shrink-0 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <div class="text-sm text-slate-700">
+                <p class="font-semibold text-ink-900">Openingstijden</p>
+                <dl class="mt-1 space-y-0.5">
+                  <div class="flex gap-4"><dt class="w-20">Ma - Vr</dt><dd>08:00 - 17:30</dd></div>
+                  <div class="flex gap-4"><dt class="w-20">Zaterdag</dt><dd>09:00 - 13:00</dd></div>
+                  <div class="flex gap-4"><dt class="w-20">Zondag</dt><dd>Gesloten</dd></div>
+                </dl>
+              </div>
+            </div>
+          </div>
+
+          <!-- kaart -->
+          <div class="overflow-hidden rounded-xl border border-slate-200 shadow-sm min-h-[260px]">
+            <iframe title="Locatie Fix-It All op de kaart" class="h-full min-h-[260px] w-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=5.0760%2C52.0700%2C5.1080%2C52.0850&layer=mapnik&marker=52.0775%2C5.0920"></iframe>
+          </div>
+
+          <!-- formulier -->
+          <form class="space-y-4 rounded-xl border border-slate-200 bg-white p-6 shadow-sm" onsubmit="return handleContact(event)">
+            <div class="field">
+              <label for="naam">Naam</label>
+              <input id="naam" name="naam" type="text" required placeholder="Jan de Vries" class="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-ink-900 placeholder:text-slate-400 transition-colors focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30" />
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" required placeholder="jan@example.nl" class="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-ink-900 placeholder:text-slate-400 transition-colors focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30" />
+            </div>
+            <div class="field">
+              <label for="tel">Telefoon</label>
+              <input id="tel" name="tel" type="tel" placeholder="06 12345678" class="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-ink-900 placeholder:text-slate-400 transition-colors focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30" />
+            </div>
+            <div class="field">
+              <label for="bericht">Bericht</label>
+              <textarea id="bericht" name="bericht" rows="4" required minlength="10" placeholder="Graag ontvang ik meer informatie." class="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-ink-900 placeholder:text-slate-400 transition-colors focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30"></textarea>
+              <p class="mt-1 text-xs text-slate-400">Minimaal 10 karakters</p>
+            </div>
+            <button type="submit" class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand-orange px-4 py-3 text-sm font-semibold text-white transition-all duration-150 hover:bg-brand-orangeDark active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              Verstuur bericht
+            </button>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ======================= FOOTER ======================= -->
-  <footer class="border-t border-white/5 bg-ink-900">
-    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-8 text-sm text-white/55 lg:flex-row lg:px-8">
-      <div class="flex items-baseline gap-0.5 text-lg font-extrabold tracking-tightest text-white">
-        <span>Fix-It</span><span class="text-brand-orange">All</span>
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-ink-950">
+    <div class="mx-auto max-w-7xl px-5 py-14 lg:px-8">
+      <div class="grid grid-cols-2 gap-8 lg:grid-cols-5">
+        <div class="col-span-2 lg:col-span-1">
+          <div class="text-xl font-extrabold italic tightest">Fix-It <span class="text-brand-orange not-italic">All</span></div>
+          <p class="mt-3 text-sm leading-relaxed text-white/50">Service en kwaliteit voor een betaalbare prijs. Sinds 2000.</p>
+          <div class="mt-4 flex gap-3">
+            <a href="#" aria-label="Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/5 text-white/70 transition-colors hover:bg-brand-orange hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" aria-label="Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/5 text-white/70 transition-colors hover:bg-brand-orange hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="WhatsApp" class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/5 text-white/70 transition-colors hover:bg-brand-orange hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.6 4 5.3 5.3 0 0 0 3.2.7 2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg></a>
+          </div>
+        </div>
+        <nav aria-label="Diensten">
+          <h4 class="text-sm font-bold">Diensten</h4>
+          <ul class="mt-3 space-y-2 text-sm text-white/55">
+            <li><a class="hover:text-brand-orange transition-colors" href="#diensten">Reparatie</a></li>
+            <li><a class="hover:text-brand-orange transition-colors" href="#diensten">Onderhoud &amp; APK</a></li>
+            <li><a class="hover:text-brand-orange transition-colors" href="#diensten">Alle merken</a></li>
+            <li><a class="hover:text-brand-orange transition-colors" href="#diensten">Diagnose</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Over ons">
+          <h4 class="text-sm font-bold">Over ons</h4>
+          <ul class="mt-3 space-y-2 text-sm text-white/55">
+            <li><a class="hover:text-brand-orange transition-colors" href="#waarom">Waarom Fix-It All</a></li>
+            <li><a class="hover:text-brand-orange transition-colors" href="#reviews">Reviews</a></li>
+            <li><a class="hover:text-brand-orange transition-colors" href="occasions.html">Auto's te koop</a></li>
+            <li><a class="hover:text-brand-orange transition-colors" href="#vacature">Vacature</a></li>
+            <li><a class="hover:text-brand-orange transition-colors" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h4 class="text-sm font-bold">Contact</h4>
+          <ul class="mt-3 space-y-2 text-sm text-white/55">
+            <li>Industrieweg 12</li>
+            <li>3542 AD Utrecht</li>
+            <li><a class="hover:text-brand-orange transition-colors" href="tel:0302148488">030 214 8488</a></li>
+            <li><a class="hover:text-brand-orange transition-colors" href="mailto:info@fix-it-all.nl">info@fix-it-all.nl</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold">Openingstijden</h4>
+          <ul class="mt-3 space-y-2 text-sm text-white/55">
+            <li class="flex justify-between gap-2"><span>Ma - Vr</span><span>08:00 - 17:30</span></li>
+            <li class="flex justify-between gap-2"><span>Zaterdag</span><span>09:00 - 13:00</span></li>
+            <li class="flex justify-between gap-2"><span>Zondag</span><span>Gesloten</span></li>
+          </ul>
+        </div>
       </div>
-      <p>Autoservice Utrecht &middot; Onderhoud, APK, reparatie &amp; diagnose</p>
-      <p>&copy; <span id="year">2026</span> Fix-It All. Alle rechten voorbehouden.</p>
+      <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/45 sm:flex-row">
+        <p>&copy; <span id="year">2026</span> Fix-It All. Alle rechten voorbehouden.</p>
+        <div class="flex gap-5">
+          <a class="hover:text-white/80 transition-colors" href="#">Privacyverklaring</a>
+          <a class="hover:text-white/80 transition-colors" href="#">Algemene voorwaarden</a>
+          <a class="hover:text-white/80 transition-colors" href="#">Cookies</a>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <!-- toast -->
+  <div id="toast" class="pointer-events-none fixed bottom-5 right-5 z-50 hidden">
+    <div class="pointer-events-auto flex items-center gap-3 rounded-lg border border-ink-border bg-white px-4 py-3 text-sm text-ink-900 shadow-2xl">
+      <svg class="h-6 w-6 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+      <div><p class="font-semibold">Bericht verzonden.</p><p class="text-slate-500">We nemen snel contact op.</p></div>
+    </div>
+  </div>
+
   <script>
-    // Mobiel menu toggle
     (function () {
-      var btn = document.getElementById('menuBtn');
-      var menu = document.getElementById('mobileMenu');
+      var header = document.getElementById('header');
+      var solid = 'bg-ink-900/95 backdrop-blur shadow-lg shadow-black/20';
+      function onScroll() {
+        if (window.scrollY > 40) { header.classList.add('bg-ink-900/95','backdrop-blur','shadow-lg','shadow-black/20'); }
+        else { header.classList.remove('bg-ink-900/95','backdrop-blur','shadow-lg','shadow-black/20'); }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+      var btn = document.getElementById('menuBtn'), menu = document.getElementById('mobileMenu');
       btn.addEventListener('click', function () {
         var open = menu.classList.toggle('hidden') === false;
         btn.setAttribute('aria-expanded', String(open));
       });
-      menu.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', function () {
-          menu.classList.add('hidden');
-          btn.setAttribute('aria-expanded', 'false');
-        });
-      });
-      var y = new Date().getFullYear();
-      document.getElementById('year').textContent = y;
+      menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { menu.classList.add('hidden'); btn.setAttribute('aria-expanded','false'); }); });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
     })();
+
+    function handleContact(e) {
+      e.preventDefault();
+      var t = document.getElementById('toast');
+      t.classList.remove('hidden');
+      e.target.reset();
+      setTimeout(function () { t.classList.add('hidden'); }, 4000);
+      return false;
+    }
   </script>
 </body>
 </html>

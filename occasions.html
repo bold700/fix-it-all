@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auto's te koop | Fix-It All Utrecht, occasions met BOVAG-garantie</title>
+  <meta name="description" content="Scherp geprijsde, vakkundig gecontroleerde occasions bij Fix-It All Utrecht. Inclusief beurt, APK en garantie. Bekijk het actuele aanbod." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { brand: { orange: '#F47A20', orangeDark: '#DC6810', orangeSoft: '#FFF3E9' }, ink: { 950: '#070B11', 900: '#0B1118', 800: '#0E1620', 700: '#13202C', card: '#16222F', border: '#26333F' } },
+        fontFamily: { sans: ['Inter','system-ui','sans-serif'] },
+      } },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .tightest { letter-spacing: -0.03em; }
+    .banner-bg {
+      background-image: linear-gradient(90deg, rgba(7,11,17,0.92) 0%, rgba(7,11,17,0.78) 50%, rgba(7,11,17,0.5) 100%),
+        url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2000&q=80');
+      background-size: cover; background-position: center;
+    }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-ink-900 antialiased selection:bg-brand-orange/30">
+  <a href="#aanbod" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:rounded-md focus:bg-brand-orange focus:px-4 focus:py-2 focus:font-semibold focus:text-white">Direct naar aanbod</a>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header" class="fixed inset-x-0 top-0 z-40 transition-all duration-300">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Hoofdnavigatie">
+      <a href="index.html" class="text-2xl font-extrabold italic tightest text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded">Fix-It <span class="text-brand-orange not-italic">All</span></a>
+      <ul class="hidden lg:flex items-center gap-8 text-sm font-medium text-white/85">
+        <li><a class="transition-colors duration-150 hover:text-brand-orange" href="index.html#diensten">Diensten</a></li>
+        <li><a class="transition-colors duration-150 hover:text-brand-orange" href="index.html#waarom">Waarom</a></li>
+        <li><a class="transition-colors duration-150 hover:text-brand-orange" href="index.html#reviews">Reviews</a></li>
+        <li><a class="text-brand-orange" href="occasions.html" aria-current="page">Auto's te koop</a></li>
+        <li><a class="transition-colors duration-150 hover:text-brand-orange" href="index.html#vacature">Vacature</a></li>
+        <li><a class="transition-colors duration-150 hover:text-brand-orange" href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="tel:0302148488" class="hidden sm:inline-flex items-center gap-2 rounded-md bg-brand-orange px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-brand-orangeDark active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Bel direct 030 214 8488
+        </a>
+        <button id="menuBtn" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/15 text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10 bg-ink-900/98 backdrop-blur px-5 pb-5 pt-2">
+      <ul class="flex flex-col text-base font-medium text-white/90">
+        <li><a class="block rounded px-2 py-3 hover:bg-white/5" href="index.html#diensten">Diensten</a></li>
+        <li><a class="block rounded px-2 py-3 hover:bg-white/5" href="index.html#waarom">Waarom</a></li>
+        <li><a class="block rounded px-2 py-3 hover:bg-white/5" href="index.html#reviews">Reviews</a></li>
+        <li><a class="block rounded px-2 py-3 text-brand-orange" href="occasions.html">Auto's te koop</a></li>
+        <li><a class="block rounded px-2 py-3 hover:bg-white/5" href="index.html#vacature">Vacature</a></li>
+        <li><a class="block rounded px-2 py-3 hover:bg-white/5" href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="tel:0302148488" class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand-orange px-4 py-3 text-sm font-semibold text-white hover:bg-brand-orangeDark">Bel direct 030 214 8488</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== BANNER ===== -->
+    <section class="banner-bg text-white">
+      <div class="mx-auto max-w-7xl px-5 pt-32 pb-16 lg:px-8 lg:pt-40 lg:pb-20">
+        <nav class="mb-4 text-xs text-white/55" aria-label="Kruimelpad"><a href="index.html" class="hover:text-brand-orange">Home</a> <span class="mx-1.5">/</span> <span class="text-white/80">Auto's te koop</span></nav>
+        <h1 class="max-w-2xl text-4xl font-extrabold leading-[1.05] tightest sm:text-5xl">Auto's te koop</h1>
+        <p class="mt-4 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">Scherp geprijsde, vakkundig gecontroleerde occasions. Iedere auto wordt afgeleverd inclusief grote beurt, nieuwe APK en garantie.</p>
+        <div class="mt-7 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+          <span class="flex items-center gap-2"><svg class="h-5 w-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>BOVAG-garantie</span>
+          <span class="flex items-center gap-2"><svg class="h-5 w-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Nieuwe APK &amp; beurt</span>
+          <span class="flex items-center gap-2"><svg class="h-5 w-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.1 2.1-2.3-.6-.6-2.3 2.1-2.1z"/></svg>Inruil mogelijk</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AANBOD ===== -->
+    <section id="aanbod" class="scroll-mt-20">
+      <div class="mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-16">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <h2 class="text-2xl font-extrabold tightest sm:text-3xl">Ons aanbod <span id="count" class="text-base font-medium text-slate-400">(6 auto's)</span></h2>
+          <!-- filter -->
+          <div role="group" aria-label="Filter op type" class="flex flex-wrap gap-2">
+            <button data-filter="alle" class="filter-btn rounded-full border border-brand-orange bg-brand-orange px-4 py-2 text-sm font-semibold text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">Alle</button>
+            <button data-filter="compact" class="filter-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:border-brand-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">Compact</button>
+            <button data-filter="suv" class="filter-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:border-brand-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">SUV</button>
+            <button data-filter="premium" class="filter-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:border-brand-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">Premium</button>
+            <button data-filter="sport" class="filter-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:border-brand-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">Sport</button>
+          </div>
+        </div>
+
+        <div id="grid" class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="bg-ink-900 text-white">
+      <div class="mx-auto max-w-7xl px-5 py-14 lg:px-8 lg:py-16">
+        <div class="rounded-2xl border border-ink-border bg-gradient-to-br from-ink-700 to-ink-950 p-8 text-center sm:p-12">
+          <h2 class="text-2xl font-extrabold tightest sm:text-3xl">Auto gezien die u aanspreekt?</h2>
+          <p class="mx-auto mt-3 max-w-xl text-white/65">Bel of mail ons voor meer informatie of een proefrit. Inruil van uw huidige auto is altijd bespreekbaar.</p>
+          <div class="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a href="tel:0302148488" class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand-orange px-6 py-3.5 text-sm font-semibold text-white transition-all duration-150 hover:bg-brand-orangeDark active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ink-900 sm:w-auto">Bel 030 214 8488</a>
+            <a href="index.html#contact" class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/20 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-150 hover:bg-white/5 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange sm:w-auto">Plan een proefrit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-ink-950 text-white">
+    <div class="mx-auto max-w-7xl px-5 py-14 lg:px-8">
+      <div class="grid grid-cols-2 gap-8 lg:grid-cols-5">
+        <div class="col-span-2 lg:col-span-1">
+          <div class="text-xl font-extrabold italic tightest">Fix-It <span class="text-brand-orange not-italic">All</span></div>
+          <p class="mt-3 text-sm leading-relaxed text-white/50">Service en kwaliteit voor een betaalbare prijs. Sinds 2000.</p>
+        </div>
+        <nav aria-label="Diensten">
+          <h4 class="text-sm font-bold">Diensten</h4>
+          <ul class="mt-3 space-y-2 text-sm text-white/55">
+            <li><a class="hover:text-brand-orange transition-colors" href="index.html#diensten">Reparatie</a></li>
+            <li><a class="hover:text-brand-orange transition-colors" href="index.html#diensten">Onderhoud &amp; APK</a></li>
+            <li><a class="hover:text-brand-orange transition-colors" href="index.html#diensten">Alle merken</a></li>
+            <li><a class="hover:text-brand-orange transition-colors" href="index.html#diensten">Diagnose</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Over ons">
+          <h4 class="text-sm font-bold">Over ons</h4>
+          <ul class="mt-3 space-y-2 text-sm text-white/55">
+            <li><a class="hover:text-brand-orange transition-colors" href="index.html#waarom">Waarom Fix-It All</a></li>
+            <li><a class="hover:text-brand-orange transition-colors" href="index.html#reviews">Reviews</a></li>
+            <li><a class="hover:text-brand-orange transition-colors" href="occasions.html">Auto's te koop</a></li>
+            <li><a class="hover:text-brand-orange transition-colors" href="index.html#vacature">Vacature</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h4 class="text-sm font-bold">Contact</h4>
+          <ul class="mt-3 space-y-2 text-sm text-white/55">
+            <li>Industrieweg 12</li><li>3542 AD Utrecht</li>
+            <li><a class="hover:text-brand-orange transition-colors" href="tel:0302148488">030 214 8488</a></li>
+            <li><a class="hover:text-brand-orange transition-colors" href="mailto:info@fix-it-all.nl">info@fix-it-all.nl</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold">Openingstijden</h4>
+          <ul class="mt-3 space-y-2 text-sm text-white/55">
+            <li class="flex justify-between gap-2"><span>Ma - Vr</span><span>08:00 - 17:30</span></li>
+            <li class="flex justify-between gap-2"><span>Zaterdag</span><span>09:00 - 13:00</span></li>
+            <li class="flex justify-between gap-2"><span>Zondag</span><span>Gesloten</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/45 sm:flex-row">
+        <p>&copy; <span id="year">2026</span> Fix-It All. Alle rechten voorbehouden.</p>
+        <div class="flex gap-5">
+          <a class="hover:text-white/80 transition-colors" href="#">Privacyverklaring</a>
+          <a class="hover:text-white/80 transition-colors" href="#">Algemene voorwaarden</a>
+          <a class="hover:text-white/80 transition-colors" href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var IMG = 'https://images.unsplash.com/';
+    var Q = '?auto=format&fit=crop&w=700&q=70';
+    var cars = [
+      { merk: 'Fiat 500', model: '1.2 Lounge', prijs: '11.950', jaar: 2019, km: '54.300', brandstof: 'Benzine', transmissie: 'Handgeschakeld', cat: 'compact', badge: 'Zuinig', img: 'photo-1549317661-bd32c8ce0db2' },
+      { merk: 'BMW 4-serie', model: '420i Coupé M-Sport', prijs: '34.900', jaar: 2020, km: '47.800', brandstof: 'Benzine', transmissie: 'Automaat', cat: 'premium', badge: 'M-Sport', img: 'photo-1502877338535-766e1452684a' },
+      { merk: 'Toyota RAV4', model: 'Hybrid AWD Executive', prijs: '32.950', jaar: 2021, km: '38.100', brandstof: 'Hybride', transmissie: 'Automaat', cat: 'suv', badge: 'Hybride', img: 'photo-1617469767053-d3b523a0b982' },
+      { merk: 'Audi RS6', model: 'Avant 4.0 TFSI quattro', prijs: '119.500', jaar: 2021, km: '29.500', brandstof: 'Benzine', transmissie: 'Automaat', cat: 'premium', badge: 'Nieuw binnen', img: 'photo-1606664515524-ed2f786a0bd6' },
+      { merk: 'Mercedes-AMG', model: 'GT 4.0 V8', prijs: '112.000', jaar: 2019, km: '31.200', brandstof: 'Benzine', transmissie: 'Automaat', cat: 'sport', badge: 'Youngtimer', img: 'photo-1605559424843-9e4c228bf1c2' },
+      { merk: 'Nissan GT-R', model: '3.8 V6 Black Edition', prijs: '89.900', jaar: 2018, km: '42.600', brandstof: 'Benzine', transmissie: 'Automaat', cat: 'sport', badge: 'Uniek', img: 'photo-1568605117036-5fe5e7bab0b7' },
+    ];
+
+    function spec(svg, val) {
+      return '<span class="flex items-center gap-1.5 text-slate-600"><svg class="h-4 w-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + svg + '</svg>' + val + '</span>';
+    }
+    var I = {
+      cal: '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+      road: '<path d="M4 19l4-14M20 19l-4-14M12 6v2M12 11v2M12 16v2"/>',
+      fuel: '<path d="M3 22h12V4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2zM15 9h2a2 2 0 0 1 2 2v6a2 2 0 0 0 2 2 2 2 0 0 0 2-2V8l-4-4"/>',
+      gear: '<circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/>'
+    };
+
+    function card(c) {
+      return '' +
+      '<article class="car group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-150 hover:-translate-y-1 hover:shadow-lg" data-cat="' + c.cat + '">' +
+        '<div class="relative aspect-[16/10] overflow-hidden bg-slate-100">' +
+          '<img src="' + IMG + c.img + Q + '" alt="' + c.merk + ' ' + c.model + '" loading="lazy" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />' +
+          '<span class="absolute left-3 top-3 rounded-full bg-brand-orange px-3 py-1 text-xs font-semibold text-white shadow">' + c.badge + '</span>' +
+        '</div>' +
+        '<div class="flex flex-1 flex-col p-5">' +
+          '<h3 class="text-lg font-bold tracking-tight">' + c.merk + '</h3>' +
+          '<p class="text-sm text-slate-500">' + c.model + '</p>' +
+          '<div class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm">' +
+            spec(I.cal, c.jaar) + spec(I.road, c.km + ' km') + spec(I.fuel, c.brandstof) + spec(I.gear, c.transmissie) +
+          '</div>' +
+          '<div class="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">' +
+            '<span class="text-xl font-extrabold tightest text-ink-900">&euro; ' + c.prijs + '</span>' +
+            '<a href="index.html#contact" class="inline-flex items-center gap-1.5 rounded-md bg-ink-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">Bekijk auto <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>' +
+          '</div>' +
+        '</div>' +
+      '</article>';
+    }
+
+    var grid = document.getElementById('grid');
+    grid.innerHTML = cars.map(card).join('');
+
+    var count = document.getElementById('count');
+    document.querySelectorAll('.filter-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var f = btn.getAttribute('data-filter');
+        document.querySelectorAll('.filter-btn').forEach(function (b) {
+          b.classList.remove('bg-brand-orange','text-white','border-brand-orange');
+          b.classList.add('bg-white','text-slate-700','border-slate-300');
+        });
+        btn.classList.add('bg-brand-orange','text-white','border-brand-orange');
+        btn.classList.remove('bg-white','text-slate-700','border-slate-300');
+        var visible = 0;
+        document.querySelectorAll('.car').forEach(function (el) {
+          var show = f === 'alle' || el.getAttribute('data-cat') === f;
+          el.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+        count.textContent = '(' + visible + (visible === 1 ? ' auto)' : " auto's)");
+      });
+    });
+
+    (function () {
+      var header = document.getElementById('header');
+      function onScroll() {
+        if (window.scrollY > 40) header.classList.add('bg-ink-900/95','backdrop-blur','shadow-lg','shadow-black/20');
+        else header.classList.remove('bg-ink-900/95','backdrop-blur','shadow-lg','shadow-black/20');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+      var btn = document.getElementById('menuBtn'), menu = document.getElementById('mobileMenu');
+      btn.addEventListener('click', function () { var open = menu.classList.toggle('hidden') === false; btn.setAttribute('aria-expanded', String(open)); });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
