@@ -1,7 +1,7 @@
-/* ===== Brand kleur op één plek (helder oranje) ===== */
+/* ===== Brand kleur op één plek (rood) ===== */
 :root {
-  --brand-orange: 255 122 20;        /* #FF7A14 - helder oranje */
-  --brand-orange-dark: 235 100 8;    /* #EB6408 */
+  --brand-orange: 220 38 38;         /* #DC2626 - rood */
+  --brand-orange-dark: 185 28 28;    /* #B91C1C - donkerrood (hover) */
 }
 
 html { scroll-behavior: smooth; }
