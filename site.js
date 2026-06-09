@@ -74,6 +74,11 @@
 
   var toast = '<div id="toast" class="pointer-events-none fixed bottom-5 right-5 z-50 hidden"><div class="pointer-events-auto flex items-center gap-3 rounded-lg border border-ink-border bg-white px-4 py-3 text-sm text-ink-900 shadow-2xl"><svg class="h-6 w-6 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg><div><p class="font-semibold">Bericht verzonden.</p><p class="text-slate-500">We nemen snel contact op.</p></div></div></div>';
 
+  // ===== Favicon (tab-icoon) op elke pagina =====
+  if (!document.querySelector('link[rel="icon"]')) {
+    document.head.insertAdjacentHTML('beforeend', '<link rel="icon" type="image/svg+xml" href="favicon.svg" />');
+  }
+
   // ===== Injecteren =====
   var h = document.getElementById('site-header'); if (h) h.outerHTML = header;
   var f = document.getElementById('site-footer'); if (f) f.outerHTML = footer;
